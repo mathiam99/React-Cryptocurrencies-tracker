@@ -20,7 +20,7 @@ class Cryptocurrency extends Component {
     getcolor(){
         let classes = ""
         let col = this.state.cryptos.price_change_percentage_24h
-        parseInt(col)
+        parseFloat(col)
         classes +=  col < 0 ? "red" : "green"
         return classes
     }

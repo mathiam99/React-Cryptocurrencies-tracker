@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import Header from './header'
 import './styles/cryptocurrencies.css';
 
@@ -17,18 +17,12 @@ class Cryptocurrency extends Component {
          .then(data =>{this.setState({cryptos: data})})
     }
 
-    getcolor(){
-        let classes = ""
-        let col = this.state.cryptos.price_change_percentage_24h
-        parseFloat(col)
-        classes +=  col < 0 ? "red" : "green"
-        return classes
-    }
 
     render() { 
         return ( 
             <React.Fragment>
                 <Header />
+                <h2>Cryptocurrency live tracker</h2>
                 <div className="crypto-container">
                     <React.Fragment>
                         <table>
@@ -38,10 +32,9 @@ class Cryptocurrency extends Component {
                                 <th>Name</th>
                                 <th>Current price</th>
                                 <th>Market Cap</th>
-                                <th>Total volume</th>
                                 <th>High 24h</th>
                                 <th>Low 24h</th>
-                                <th>Price chance percentage 24h</th>
+                                <th>Price change % 24h</th>
                                 <th>Last Updated</th>
                             </tr>
                                 {this.state.cryptos.map((crypto) =>
@@ -50,11 +43,10 @@ class Cryptocurrency extends Component {
                                         <td>{crypto.symbol}</td>
                                         <td>{crypto.name}</td>
                                         <td>{crypto.current_price} €</td>
-                                        <td>{crypto.market_cap}</td>
                                         <td>{crypto.total_volume}</td>
                                         <td>{crypto.high_24h}</td>
                                         <td>{crypto.low_24h}</td>
-                                        <td className={this.getcolor()}>{crypto.price_change_percentage_24h}</td>
+                                        <td>{crypto.price_change_percentage_24h} %</td>
                                         <td>{crypto.last_updated}</td>
                                     </tr>
                                 )}

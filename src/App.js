@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import {BrowserRouter, Route, Link, Switch} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import Cryptocurrency from './components/cryptocurrencies';
 import Dashboard from './components/dashboard';
 import AboutPage from './components/about'

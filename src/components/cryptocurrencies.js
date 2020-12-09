@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import Header from './header'
 import './styles/cryptocurrencies.css';
 
 class Cryptocurrency extends Component {
     constructor(){
         super()
             this.state = { 
-                cryptos : []
+                cryptos : [],
              }
 
     }
 
+
     componentDidMount(){
-         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=50&page=1&sparkline=false")
          .then(response => response.json())
          .then(data =>{this.setState({cryptos: data})})
     }
 
+    getColor = () => {
+        
+    }
 
     render() { 
         return ( 
             <React.Fragment>
-                <Header />
-                <h2>Cryptocurrency live tracker</h2>
-                <div className="crypto-container">
-                    <React.Fragment>
+                <h4>Cryptocurrency live tracker</h4>
+                <div className="container">
                         <table>
                             <tr>
                                 <th></th>
@@ -50,8 +51,7 @@ class Cryptocurrency extends Component {
                                         <td>{crypto.last_updated}</td>
                                     </tr>
                                 )}
-                        </table>   
-                    </React.Fragment>
+                        </table>
                 </div>
             </React.Fragment>
          );

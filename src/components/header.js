@@ -1,11 +1,20 @@
 import React from 'react';
-import './styles/header.css';
 
 const Header = () => {
     return ( 
-        <div className="header">
-            <span className="logo">CryptoTracker</span>
-        </div>
+        <React.Fragment>
+            <nav className="nav-wrapper blue darken-3">
+                <div className="container">
+                    <a className="brand-logo" href="/"> CryptoTracker</a>
+
+                    <ul className="right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                </div>
+            </nav>      
+        </React.Fragment>
      );
 }
  

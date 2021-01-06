@@ -29,14 +29,13 @@ class Cryptocurrency extends Component {
                         <table>
                             <tr>
                                 <th></th>
-                                <th>Symbol</th>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Current price</th>
                                 <th>Market Cap</th>
                                 <th>High 24h</th>
                                 <th>Low 24h</th>
                                 <th>Price change % 24h</th>
-                                <th>Last Updated</th>
                             </tr>
                                 {this.state.cryptos.map((crypto) =>
                                     <tr>
@@ -48,7 +47,6 @@ class Cryptocurrency extends Component {
                                         <td>{crypto.high_24h}</td>
                                         <td>{crypto.low_24h}</td>
                                         <td>{crypto.price_change_percentage_24h} %</td>
-                                        <td>{crypto.last_updated}</td>
                                     </tr>
                                 )}
                         </table>

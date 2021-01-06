@@ -8,7 +8,7 @@ const Header = () => {
                 <div className="container">
                     <a className="brand-logo" href="/"> CryptoTracker</a>
 
-                    <ul className="right">
+                    <ul className="right hide-on-med-and-down">
                         <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                         <li><NavLink to="/About">About</NavLink></li>
